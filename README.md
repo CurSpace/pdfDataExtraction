@@ -11,11 +11,12 @@ result is printed.
 __Installation__
 
 
-1. clone the repository- git clone git@github.com:CurSpace/cs5293sp22-project0.git
+1. Clone the repository- git clone git@github.com:CurSpace/cs5293sp22-project0.git
 2. Navigate to the project0 folder - cd "cs5293sp22-project0/project0"
 3. Install pipenv - pip install pipenv
 4. Install the required packages - pipenv install -r requirements.txt
 5. pipenv run pytest
+
 
 __Python packages used:__
 
@@ -30,7 +31,7 @@ __Python packages used:__
 
 ### Description
 
-- The main.py shows the flow of operations.
+- The main.py controls the flow of operations.
 - The functions are implemted in the project0.py
 - Run the program by:
 ```
@@ -144,10 +145,10 @@ Welfare Check 22
 __Anomalies in the Data__
 
 1. The address might span over two lines.
-  Fix - The 2nd line of the address was preceeded by a space and \n. Used regex ' \n' substituted with a space.
+  Fix - The 2nd line of the address was preceeded by a space and \n. Used regex ' \n' and substituted with a space.
   
 2. The nature and incidend_ori fields might be missing.
-   Fix - Use data as seperator.
+   Fix - Use date as seperator.
 
 __Testing__
 
