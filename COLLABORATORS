@@ -1,7 +1,5 @@
 Aditya Kasturi | adityakasturi@0u.edu |suggested to inclued sys.path.append('..') as project0 moudle was not accessible from the test folder
 
-Deepika Mettu | deepika.mettu-1@ou.edu | Discussed database connection, population and status and suggested the use of executemany() to do the insertions.
-
 ntu |https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html | forgot to escape brackets ( )
 
 docs.python.org | https://docs.python.org/3.8/library/sqlite3.html | for database functions.
