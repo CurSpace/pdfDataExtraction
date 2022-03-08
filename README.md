@@ -19,14 +19,14 @@ __Installation__
 
 __Python packages used:__
 
--argparser
--urllib
--tempfile
--PyPDF2
--sqlite3
--pytest
--sys
--PyPDF2
+- argparser
+- urllib
+- tempfile
+- PyPDF2
+- sqlite3
+- pytest
+- sys
+- PyPDF2
 
 ### Description
 
