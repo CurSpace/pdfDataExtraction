@@ -15,7 +15,7 @@ __Installation__
 2. Navigate to the project0 folder - cd "cs5293sp22-project0/project0"
 3. Install pipenv - pip install pipenv
 4. Install the required packages - pipenv install -r requirements.txt
-5. pipenv run pytest
+5. Navigate to test folder and run pytest - pytest
 
 
 __Python packages used:__
