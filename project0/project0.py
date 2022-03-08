@@ -3,8 +3,7 @@ import tempfile
 import PyPDF2
 import sqlite3
 import re
-import numpy as np
-import pandas as pd
+
 def fetchincidents(url):
     headers = {}
     headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
@@ -43,20 +42,16 @@ def extractincidents(incident_data):
         for lst in pagen:
             if (len(lst.split('\n')) == 5): # no of values to insert
                 ls.append(lst.split('\n'))
-       
-        #allpages.append(pagen)
-        #allpages[pagenum].remove(allpages[pagenum][-1])
-        #row = [allpages[pagenum][n:n+5] for n in range(0,len(pagen),5) ]
-        #rows.extend(row)
-       
-    # remove date from last page
-    #rows[pagenum].remove(rows[pagenum][-1])
-       
-    #print(ls)
-    #table = np.array(allpages, dtype='object')
-
-        #table = table.reshape([5,5])
-    #print(rows)
+              
+            elif (len(lst.split('\n')) == 3):
+                temp = lst.split('\n')
+                temp1 = temp[2]
+                temp.pop(2)
+                temp.append('N/A')
+                temp.append('N/A')
+                temp.append(temp1)
+                ls.append(temp)  
+    print(ls)
     return ls
 
 
@@ -98,8 +93,7 @@ def status(db):
     cur.execute('''SELECT nature, count(nature) FROM incidents GROUP BY nature ORDER BY nature''' )
     allpages = cur.fetchall()
     for page in allpages:
-
-        print(page[0], page[1])
+        print(page[0], '|' , page[1])
     con.commit()
     con.close()
     return True
