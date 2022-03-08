@@ -10,6 +10,12 @@ result is printed.
 
 ## Developement Process
 
+- Created main.py with the funcions call in the right sequence.
+- Created project0.py with function definitions.
+- Fetch the data.
+- Extract data using Py2PDF and regex to remove the headers and footers. 
+- Created database 'normapd.db' with table incidents.
+
 __Installation__
 
 
@@ -140,8 +146,8 @@ Welfare Check 22
  2. fetch_incidents() - reads the data from the given url as bytes.
  3. extract_incidents() - converts the data into a list of list. Each list contains the rows in the give pdf. 
  4. createdb() - creates a database called 'normanpd.db' with a table called 'incidents'.
- 5. populatedb() - inserts the values of the from the pdf to the database
- 6. status() - groups by nature and orders by nature
+ 5. populatedb() - inserts the values of the from the pdf to the database.
+ 6. status() - groups by nature and orders by nature.
  
  
 __Anomalies in the Data__
