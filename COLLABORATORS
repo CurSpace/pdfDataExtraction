@@ -1,6 +1,8 @@
-stackoverflow | https://stackoverflow.com/questions/32239372/how-to-import-files-in-python-using-sys-path-append |suggested to inclued sys.path.append('..') as project0 moudle was not accessible from the test folder
+Aditya Rohan Singh | aditya.rohan.singh-1@ou.edu | discussed removing the headers in the first page and the footer in the last page.
 
-ntu |https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html | forgot to escape brackets ( )
+stackoverflow | https://stackoverflow.com/questions/32239372/how-to-import-files-in-python-using-sys-path-append |suggested to include sys.path.append('..') as project0 moudle was not accessible from the test folder
+
+ntu |https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html | forgot to escape brackets ( ).
 
 docs.python.org | https://docs.python.org/3.8/library/sqlite3.html | for database functions.
 
