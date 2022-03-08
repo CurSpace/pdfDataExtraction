@@ -8,6 +8,8 @@ The goal of this project is to extract data from a pdf given a url. The pdf cont
 is parsed and extraced. The extracted contents is inserted into a data base. Finally the data is grouped and ordered by the 'nature' field and the 
 result is printed.
 
+## Developement Process
+
 __Installation__
 
 
