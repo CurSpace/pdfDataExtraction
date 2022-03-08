@@ -124,7 +124,7 @@ Welfare Check 22
  
  1. main() - calls all the functions in the following order:
  
-            ```
+           ```
                   fetch_incidents()
                   
                   extract_incidents(incident_data)
@@ -134,7 +134,7 @@ Welfare Check 22
                   populatedb(db,incidents)
                   
                   statusdb()
-            ```
+           ```
  2. fetch_incidents() - reads the data from the given url as bytes.
  3. extract_incidents() - converts the data into a list of list. Each list contains the rows in the give pdf. 
  4. createdb() - creates a database called 'normanpd.db' with a table called 'incidents'.
