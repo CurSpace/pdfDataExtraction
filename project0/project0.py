@@ -72,7 +72,7 @@ def createdb():
 
 # insert values into the Database
 def populatedb(db,incidents):
-    print(incidents)
+   # print(incidents)
     con = sqlite3.connect(db)
     cur = con.cursor()
     cur.executemany('''INSERT INTO incidents values (?,?,?,?,?)''', incidents)
