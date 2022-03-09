@@ -80,7 +80,7 @@ def populatedb(db,incidents):
     con.close()
     return True
 
-#find count of nature and goupt by nature and order by nature and print the result
+#find count of nature and goup by nature and order by nature and print the result
 def status(db):
     con = sqlite3.connect(db)
     cur = con.cursor()
