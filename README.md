@@ -68,18 +68,35 @@ __Python packages used:__
                   
                   statusdb(db)
            ```
- 2. fetch_incidents() - reads the data from the given url.
+ 2. fetch_incidents() 
+   ->  reads the data from the given url.
 
- 3. extract_incidents() - This function does all the important work. It converts the data into a list of list. Each list contains the rows in the give pdf. The headers, footers and column names are removed using the 
- re.sub() function. Then we spilit by date to get a list of list. We check 
- the inner list to see if it has 5 elements. I this is true then it means 
- that all the fields exist. If not then fields 3 and 4 are empty in this case we fill the fields with N/A.
+ 3. extract_incidents()
+
+    -> Loops through all the pages.
+    -> The headers, footers and column names are removed using the
+       re.sub() function. 
+    ->  Each list contains the rows in the give pdf. The headers, footers and column names are removed using the
+       re.sub() function.
+    -> Sustitutes space before \n to solve the issue when the address span over 2 lines.
+    -> Spilits by date to get a list of list.
+    -> Checks the inner list to see if it has 5 elements. I this is true then it means 
+       that all the fields exist. If not then fields 3 and 4 are empty in this case we 
+       fill the fields with N/A.
              
- 4. createdb() - creates a database called 'normanpd.db' with a table called 'incidents'.
+ 4. createdb() 
 
- 5. populatedb() - inserts the values of the from the pdf to the database.
+    -> create a database called 'normanpd.db'
+    -> create table called 'incidents'.
+
+ 5. populatedb() 
+
+    -> insterts values returned by extract_incidents()into the table incidents.
  
- 6. status() - groups by nature and orders by nature and prints the result.
+ 6. status() 
+
+    -> Executes a select statement that returns unique nature and the number of ocurrences of each.
+
 
     __Sample Output:__
    
@@ -157,6 +174,16 @@ Trespassing | 5
 Unconscious/Fainting | 8
 Welfare Check | 22
  ```
+__Assumptions__
+
+1. Assuming that if address is empty then nature is empty.
+
+2. Headers and footers exist only on the first and last pages respectively.
+
+3. Assumming only nature and address fields are empty.
+
+4. If the address is 2 lines then the 2nd line has an empty in front.
+ 
  
 __Anomalies in the Data__
 
@@ -166,17 +193,28 @@ __Anomalies in the Data__
 2. The nature and incidend_ori fields might be missing.
    Fix - Use date as seperator and when the list size is 3 shift the element in the 3rd field to the 5th field and insert N/A into the 3rd and 4th fields.
 
+
 __Testing__
 
-1. test_download.py - tests if type of data is bytes
+1. test_download.py
 
-2. test_extractincidents.py - tests for the lenght of data and makes sure the type of data is not NULL
+   -> tests if data exists and the  type of data is bytes
 
-3. test_createdb.py - tests if the database has been created successfully
+2. test_extractincidents.py
 
-4. test_populatedb.py - tests if the database has been populated
+   -> tests if the lenght of data is greater than zero and makes sure the type of data is not None
 
-5. test_status.py - tests if the database has been updated
+3. test_createdb.py 
+
+   -> tests if the normanpd.pd file exists in the current working directory
+   
+4. test_populatedb.py 
+
+   -> tests if the number of rows inserted for a particular pdf which is 369 in this case.
+
+5. test_status.py
+ 
+   -> test if the distinct count of nature is 73.
 
  
  

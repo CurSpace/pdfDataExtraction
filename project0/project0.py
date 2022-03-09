@@ -32,7 +32,7 @@ def extractincidents(incident_data):
         if pagenum == 0:
             pagen = re.sub('Date / Time\nIncident Number\nLocation\nNature\nIncident ORI\n','',pagen)
             pagen = re.sub('NORMAN POLICE DEPARTMENT\n','',pagen)
-            pagen = re.sub('Daily Incident Summary \(Public\)\n','',pagen)
+            pagen = re.sub('Daily Incident Summary \\(Public\\)\n','',pagen)
         pagen = re.sub(' \n',' ',pagen)
         pagen = re.split(r'\s+(?=\d?\d?\/\d?\d?\/\d{4} \d?\d?:\d?\d?)', pagen)
         # cheking if the inner list has 5 elements
@@ -90,4 +90,4 @@ def status(db):
         print(page[0], '|' , page[1])
     con.commit()
     con.close()
-    return True
+    return allpages
