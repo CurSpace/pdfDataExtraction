@@ -1,4 +1,4 @@
-Aditya Rohan Singh | aditya.rohan.singh-1@ou.edu | discussed removing the headers in the first page and the footer in the last page.
+Aditya Rohan Singh | aditya.rohan.singh-1@ou.edu | discussed removing the headers in the first page and the footer in the last page. Helped understand coming up with better tests.
 
 stackoverflow | https://stackoverflow.com/questions/32239372/how-to-import-files-in-python-using-sys-path-append |suggested to include sys.path.append('..') as project0 moudle was not accessible from the test folder
 

@@ -23,7 +23,7 @@ __Installation__
 2. Navigate to the project0 folder - cd "cs5293sp22-project0/project0"
 3. Install pipenv - pip install pipenv
 4. Install the required packages - pipenv install -r requirements.txt
-5. Navigate to test folder and run pytest - pytest
+5. Navigate to test folder and run pytest - pipenv run pytest
 
 
 __Python packages used:__
@@ -69,17 +69,22 @@ __Python packages used:__
                   statusdb(db)
            ```
  2. fetch_incidents() 
-   ->  reads the data from the given url.
+    ->  reads the data from the given url.
 
  3. extract_incidents()
 
     -> Loops through all the pages.
+
     -> The headers, footers and column names are removed using the
-       re.sub() function. 
+       re.sub() function.
+ 
     ->  Each list contains the rows in the give pdf. The headers, footers and column names are removed using the
        re.sub() function.
+
     -> Sustitutes space before \n to solve the issue when the address span over 2 lines.
+
     -> Spilits by date to get a list of list.
+
     -> Checks the inner list to see if it has 5 elements. I this is true then it means 
        that all the fields exist. If not then fields 3 and 4 are empty in this case we 
        fill the fields with N/A.
