@@ -35,14 +35,11 @@ def extractincidents(incident_data):
             pagen = re.sub('Daily Incident Summary \(Public\)\n','',pagen)
         pagen = re.sub(' \n',' ',pagen)
         pagen = re.split(r'\s+(?=\d?\d?\/\d?\d?\/\d{4} \d?\d?:\d?\d?)', pagen)
-        #print(pagen)
-        '''
-        pagen = pagen.split('\n')
-        '''
+        # cheking if the inner list has 5 elements
         for lst in pagen:
-            if (len(lst.split('\n')) == 5): # no of values to insert
+            if (len(lst.split('\n')) == 5): 
                 ls.append(lst.split('\n'))
-              
+        # shift 3rd element to the 5th spot and insert N/A at positions 3 and 4 or index 2 and 3. 
             elif (len(lst.split('\n')) == 3):
                 temp = lst.split('\n')
                 temp1 = temp[2]
@@ -51,7 +48,6 @@ def extractincidents(incident_data):
                 temp.append('N/A')
                 temp.append(temp1)
                 ls.append(temp)  
-    print(ls)
     return ls
 
 
@@ -69,14 +65,12 @@ def createdb():
     nature TEXT,
     incident_ori TEXT)''')
 
-# Save (commit) the changes
+# Save the changes
     con.commit()
-
-# We can also close the connection if we are done with it.
-# Just be sure any changes have been committed or they will be lost.
     con.close()
     return db
 
+# insert values into the Database
 def populatedb(db,incidents):
     print(incidents)
     con = sqlite3.connect(db)
@@ -86,7 +80,7 @@ def populatedb(db,incidents):
     con.close()
     return True
 
-
+#find count of nature and goupt by nature and order by nature and print the result
 def status(db):
     con = sqlite3.connect(db)
     cur = con.cursor()
